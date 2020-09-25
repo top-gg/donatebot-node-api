@@ -1,0 +1,22 @@
+{
+  "name": "donatebot-node-api",
+  "version": "1.0.0",
+  "description": "Use the Donate Bot API with Node.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/top-gg/donatebot-node-api.git"
+  },
+  "author": "Donate Bot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/top-gg/donatebot-node-api/issues"
+  },
+  "homepage": "https://github.com/top-gg/donatebot-node-api#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
