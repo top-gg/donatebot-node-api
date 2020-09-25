@@ -34,7 +34,7 @@ module.exports = function(options) {
             // }
             var findParams = "";
 
-            if (typeof markOptions === 'object' && markOptions !== null && Array.isArray(getOptions.find)) {
+            if (typeof getOptions === 'object' && getOptions !== null && Array.isArray(getOptions.find)) {
                 getOptions.find = getOptions.find.filter(x => {
                     if (x === "Reversed" || x === "Refunded" || x === "Completed") {
                         return true;
@@ -43,6 +43,8 @@ module.exports = function(options) {
 
                 findParams = getOptions.find.join(',');
             }
+
+            console.log(getOptions.find);
             
             axios({
                 method: 'get',
