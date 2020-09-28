@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 //const baseURL = "https://donatebot.io/api/v1/";
-const baseURL = "http://localhost:3000/api/v1";
-const userAgent = "Donate-Bot-Node-API/1.0.0";
+const baseURL = "https://donatebot.io/api/v1";
+const userAgent = "Donate-Bot-Node-API/1.0.2";
 
 module.exports = function(options) {
 
