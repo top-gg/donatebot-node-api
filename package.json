@@ -1,6 +1,6 @@
 {
   "name": "donatebot-node-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Use the Donate Bot API with Node.JS",
   "main": "index.js",
   "scripts": {

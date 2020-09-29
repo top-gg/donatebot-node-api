@@ -1,9 +1,15 @@
 const axios = require('axios');
 
-//const baseURL = "https://donatebot.io/api/v1/";
 const baseURL = "https://donatebot.io/api/v1";
-const userAgent = "Donate-Bot-Node-API/1.0.2";
+const userAgent = "Donate-Bot-Node-API/1.0.3";
 
+/**
+ * Create a new instance of Donate Bot Node API
+ * @param  {Object}  options
+ * @param  {string}  options.serverID  Your server ID
+ * @param  {string}  options.apiKey    Your Donate Bot API key
+ * @return {Object}                    An object of functions to call
+ */
 module.exports = function(options) {
 
     // Options {
@@ -21,6 +27,12 @@ module.exports = function(options) {
         return "";
     }
 
+    /**
+     * Get new donations that have not been marked as processed
+     * @param  {Object} getOptions
+     * @param  {string[]}  getOptions.find An array containing statuses Ex: "Completed", "Reversed", "Refunded"
+     * @return {Promise.<Object[]>}         An array of transactions that have not been marked
+     */
     var getNewDonations = function(getOptions) {
         return new Promise(async (resolve, reject) => {
             var checked = checkOptions();
@@ -44,8 +56,6 @@ module.exports = function(options) {
                 findParams = getOptions.find.join(',');
             }
 
-            console.log(getOptions.find);
-            
             axios({
                 method: 'get',
                 url: `${baseURL}/donations/${options.serverID}/new`,
@@ -71,6 +81,10 @@ module.exports = function(options) {
         });
     }
 
+    /**
+     * Get an array of ended subscriptions
+     * @return {Promise.<Object[]>} Array of ended subscriptions
+     */
     var getEndedSubscriptions = function() {
         return new Promise(async (resolve, reject) => {
             var checked = checkOptions();
@@ -101,6 +115,13 @@ module.exports = function(options) {
         });
     }
 
+    /**
+     * Mark a donation or subscription ended as processed after you have done something with it
+     * @param  {Object} markOptions
+     * @param {Boolean} markOptions.isEndedSubscription If you are marking an ended subscription
+     * @param {Boolean} markOptions.markProcessed
+     * @return {Promise.<void>} The transaction was completed
+     */
     var markDonation = function(markOptions) {
         return new Promise(async (resolve, reject) => {
             var checked = checkOptions();
