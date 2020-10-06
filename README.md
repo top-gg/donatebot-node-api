@@ -7,7 +7,7 @@ npm i donatebot-node-api --save
 ```
 
 ## Documentation
-[Click here to read the documentation for this API client.](https://developers.donatebot.io/wrappers-node.js)
+[Click here to read the documentation for this API client.](https://developers.donatebot.io/api-libraries/wrappers-node.js)
 
 ## Usage
 
